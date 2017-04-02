@@ -1,5 +1,20 @@
-<ion-view view-title="Contact">
-  <ion-content>
-    <h1>Contact</h1>
+<ion-view view-title="A propos">
+  <ion-content class="padding">
+      <div class="padding-bottom">
+          Pour plus d'informations, vous pouvez contacter <b>GreenFabz</b> à cette adresse e-mail :
+      </div>
+      <div ng-app="starter" ng-controller="mailCtrl">
+          <form ng-submit="submit()">
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Adresse mail</span>
+                  <input type="text" name="mail_adress" placeholder="Votre adresse e-mail" ng-model="data.mail_adress">
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Votre message</span>
+                  <input type="text" name="mail_text" placeholder="Votre message" ng-model="data.mail_text">
+              </label>
+              <input type="submit" name="submit" value="Envoyer" class="button button-block button-balanced">
+          </form>
+      </div>
   </ion-content>
 </ion-view>
