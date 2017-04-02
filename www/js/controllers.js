@@ -52,48 +52,5 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('articleCtrl', function($scope, $http, $stateParams, NgMap) {
-    $http({
-        method: 'GET',
-        url: 'http://baptiste-dumortier.fr/PHP/greenfabz/api_get.php?id='+ $stateParams.articleId
-    }).then(function succesCallback(response) {
-        $scope.article = response.data;
-
-        if ($scope.article.geoloc===""){
-            $scope.hidden="ng-hide";
-        }
-    });
-    NgMap.getMap().then(function(map) {
-        $scope.map = map;
-    });
-})
-
-.controller('mailCtrl', function($scope, $http){
-    $scope.data = {};
-
-    $scope.submit = function(){
-        var link = 'http://baptiste-dumortier.fr/PHP/greenfabz/api.php';
-
-        $http.post(link, {mail_adress : $scope.data.mail_adress, mail_text : $scope.data.mail_text})
-    }
-})
-    .controller('quizzCtrl', function ($scope, $http) {
-        $scope.data = {};
-
-        $scope.submit = function(){
-            var link = 'http://baptiste-dumortier.fr/PHP/greenfabz/api_quizz.php';
-
-            $http.post(link, {reponse : $scope.data.reponse});
-
-            $scope.hiddenreponse=" ";
-        }
-    })
-
-    .controller('articlesCtrl', function($scope, $http) {
-        $http({
-            method: 'GET',
-            url: 'http://baptiste-dumortier.fr/PHP/greenfabz/api_get.php'
-        }).then(function succesCallback(response) {
-            $scope.articles = response.data;
-        })
-    });
+.controller('PlaylistCtrl', function($scope, $stateParams) {
+});

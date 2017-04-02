@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngMap'])
+angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,11 +32,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMap'])
     controller: 'AppCtrl'
   })
 
+<<<<<<< HEAD
   .state('app.contact', {
     url: '/contact',
     views: {
       'menuContent': {
         templateUrl: 'templates/contact.html'
+=======
+  .state('app.search', {
+    url: '/search',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/search.html'
+>>>>>>> 576bbea37efb250336766ce2098921707f0321b6
       }
     }
   })
@@ -54,17 +62,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMap'])
       views: {
         'menuContent': {
           templateUrl: 'templates/playlists.html',
-          controller: 'articlesCtrl'
+          controller: 'PlaylistsCtrl'
         }
       }
     })
 
   .state('app.single', {
-    url: '/playlists/:articleId',
+    url: '/playlists/:playlistId',
     views: {
       'menuContent': {
         templateUrl: 'templates/playlist.html',
-        controller: 'articleCtrl'
+        controller: 'PlaylistCtrl'
       }
     }
   });

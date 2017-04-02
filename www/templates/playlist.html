@@ -1,40 +1,5 @@
-<ion-view view-title="Article">
-  <ion-content class="padding">
-      <h3>{{article.titre}}</h3>
-      {{article.text}}
-      {{article.geoloc}}
-      <ng-map default-style="true" center={{article.geoloc}} zoom="15" class="{{hidden}}">
-          <marker id="foo" position={{article.geoloc}} title="Gélocalisation" on-click="map.showInfoWindow('bar')">
-          </marker>
-          <info-window id="bar" visible-on-marker="foo">
-              <div ng-non-bindable>
-                  <div id="body-content">
-                      {{article.geoloc}}
-                  </div>
-              </div>
-          </info-window>
-      </ng-map>
-      <h2 class="text-center">Quizz</h2>
-      <p>
-          <strong>
-              {{article.questionquizz}}
-          </strong>
-      </p>
-      <form ng-controller="quizzCtrl" ng-submit="submit()">
-          <ion-radio class="item item-text-wrap gallerycard" value="1" ng-model="data.reponse">{{article.reponseok}}</ion-radio>
-          <ion-radio class="item item-text-wrap gallerycard" value="2" ng-model="data.reponse">{{article.reponsefausse2}}</ion-radio>
-          <ion-radio class="item item-text-wrap gallerycard" value="3" ng-model="data.reponse">{{article.reponsefausse1}}</ion-radio>
-          <input type="submit" value="Valider" class="button button-block button-balanced padding">
-      </form>
-      <div class="item item-text-wrap ng-hide">
-          <p>
-              <strong>
-                  La bonne réponse est :
-              </strong>
-          </p>
-          <p>
-              {{article.reponseok}}
-          </p>
-      </div>
+<ion-view view-title="Playlist">
+  <ion-content>
+    <h1>Playlist</h1>
   </ion-content>
 </ion-view>
